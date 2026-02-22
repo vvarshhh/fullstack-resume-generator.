@@ -89,7 +89,7 @@ def read_root():
     return {"message": "Resume to Email Generator API is running!"}
 
 
-@app.post("/generate-email")
+@app.post("/generate-email/")
 async def generate_email(
     resume: UploadFile = File(..., description="Resume PDF file"),
     company_name: str = Form(..., description="Target company name"),
