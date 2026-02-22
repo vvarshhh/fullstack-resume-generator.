@@ -10,10 +10,10 @@ load_dotenv()
 
 app = FastAPI(title="Resume to Email Generator API")
 
-# Allow requests from the React dev server
+# Allow requests from any origin (required for Vercel/Production)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
