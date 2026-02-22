@@ -524,7 +524,8 @@
         showToast("Email generated successfully! 🎉", "success");
 
       } catch (err) {
-        showToast("Error: " + err.message, "error");
+        console.error("Fetch Error Details:", err);
+        showToast("Error: " + err.message + " (Check console for details)", "error");
       } finally {
         btn.disabled = false;
         btnText.innerHTML = '⚡ Generate Email';
